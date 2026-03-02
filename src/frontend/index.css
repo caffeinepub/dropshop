@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Bricolage Grotesque (Display) ────────────────────────────────── */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2")
+    format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── General Sans (Body) ──────────────────────────────────────────── */
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2-variations");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+
+    /* ── Core Palette: Nordic Commerce ───────────────────────────── */
+    /* Background: warm off-white */
+    --background: 0.98 0.006 80;
+    /* Foreground: near-black with warm hint */
+    --foreground: 0.14 0.02 50;
+
+    /* Card: pure white */
+    --card: 1 0 0;
+    --card-foreground: 0.14 0.02 50;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.14 0.02 50;
+
+    /* Primary: Deep Forest Green */
+    --primary: 0.28 0.08 165;
+    --primary-foreground: 0.98 0.006 80;
+
+    /* Secondary: Muted sage */
+    --secondary: 0.94 0.015 160;
+    --secondary-foreground: 0.28 0.08 165;
+
+    /* Muted: Warm gray */
+    --muted: 0.95 0.008 80;
+    --muted-foreground: 0.52 0.018 60;
+
+    /* Accent: Warm Amber */
+    --accent: 0.82 0.16 70;
+    --accent-foreground: 0.14 0.02 50;
+
+    /* Highlight: used for CTA buttons */
+    --highlight: 0.72 0.18 50;
+    --highlight-foreground: 0.99 0 0;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.9 0.01 80;
+    --input: 0.9 0.01 80;
+    --ring: 0.28 0.08 165;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-feature-settings: "ss01";
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  }
+  .font-body {
+    font-family: "General Sans", system-ui, sans-serif;
+  }
+
+  /* Product image placeholder gradient */
+  .product-placeholder-electronics {
+    background: linear-gradient(
+      135deg,
+      oklch(0.28 0.08 250),
+      oklch(0.45 0.12 265)
+    );
+  }
+  .product-placeholder-clothing {
+    background: linear-gradient(
+      135deg,
+      oklch(0.45 0.12 320),
+      oklch(0.65 0.1 340)
+    );
+  }
+  .product-placeholder-sports {
+    background: linear-gradient(
+      135deg,
+      oklch(0.35 0.14 165),
+      oklch(0.55 0.16 180)
+    );
+  }
+  .product-placeholder-home {
+    background: linear-gradient(
+      135deg,
+      oklch(0.55 0.14 60),
+      oklch(0.75 0.14 75)
+    );
+  }
+  .product-placeholder-default {
+    background: linear-gradient(
+      135deg,
+      oklch(0.65 0.06 200),
+      oklch(0.82 0.04 220)
+    );
+  }
+}
